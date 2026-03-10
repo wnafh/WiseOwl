@@ -50,7 +50,6 @@ class AdminController:
 
     def _switch_view(self, view_class):
         """Switch to a new view"""
-        # Don't do anything if we're already on this view
         if self.current_view and self.current_view.__class__ == view_class:
             # Just bring to front if already exists
             self.current_view.show()
@@ -989,4 +988,5 @@ class AdminController:
             return self.db_handler.get_recent_returned_books()
         except:
             # Return empty list if method not implemented or error
+
             return []
