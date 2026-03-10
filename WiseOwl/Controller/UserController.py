@@ -479,7 +479,6 @@ class UserController:
             return books
 
         try:
-            # FIRST: Find correct member_id
             print(f"\n1️⃣ Finding correct member_id for '{self.user_name}'...")
 
             self.db.cursor.execute("""
@@ -505,7 +504,6 @@ class UserController:
             # Use database member_id
             actual_member_id = db_member_id
 
-            # SECOND: Get borrow records with overdue detection IN THE SQL QUERY
             print(f"\n2️⃣ Getting borrow records for member_id='{actual_member_id}'...")
 
             query = """
@@ -686,4 +684,5 @@ class UserController:
                 "error"
             )
         else:
+
             print("Database connection error - no current window to show message")
