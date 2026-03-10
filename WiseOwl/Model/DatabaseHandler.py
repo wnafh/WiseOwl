@@ -193,7 +193,7 @@ class DatabaseHandler:
             except Exception as e:
                 print(f"⚠️ Could not add librarian columns: {e}")
 
-    # ========== USER/LOGIN METHODS ==========
+    # ========== USER/LOGIN  ==========
 
     def verify_login(self, full_name, member_id):
         """Check if user exists and return their role"""
@@ -422,7 +422,7 @@ class DatabaseHandler:
             self.conn.rollback()
             return False, f"Error deleting book: {err}"
 
-    # ========== USER/MEMBER METHODS ==========
+    # ========== USER/MEMBER  ==========
 
     def get_all_users(self):
         """Get all users from database with real-time overdue counts"""
@@ -635,7 +635,7 @@ class DatabaseHandler:
 
 
 
-    # ========== TRANSACTION/REPORT METHODS ==========
+    # ========== TRANSACTION/REPORT  ==========
 
     def get_transaction_history(self, limit=100, offset=0):
         """Get complete transaction history with real timestamps and librarian info"""
@@ -1274,7 +1274,7 @@ class DatabaseHandler:
             logger.error(f"❌ Error getting borrow record: {err}")
             return None
 
-    # ========== RECEIPT DATA METHODS ==========
+    # ========== RECEIPT DATA  ==========
 
     def get_book_details(self, book_id):
         """Get detailed book information by ID"""
@@ -1334,7 +1334,7 @@ class DatabaseHandler:
             logger.error(f"❌ Error getting latest transaction: {err}")
             return None
 
-    # ========== STATISTICS METHODS ==========
+    # ========== STATISTICS  ==========
 
     def get_library_stats(self):
         """Get library statistics"""
@@ -1448,8 +1448,7 @@ class DatabaseHandler:
             logger.error(f"❌ Error checking overdue books: {err}")
             return False
 
-    # ========== UTILITY METHODS ==========
-
+   
     def close(self):
         """Close database connection"""
         try:
@@ -1464,4 +1463,5 @@ class DatabaseHandler:
 
     def is_connected(self):
         """Check if database is connected"""
+
         return self.is_connected
