@@ -21,7 +21,6 @@ class AdminInventoryView(QMainWindow):
         self.settings_callback = None
         self.logout_callback = None
         self.search_book_callback = None
-        # Removed filter_book_callback
         self.add_book_callback = None
         self.edit_book_callback = None
         self.delete_book_callback = None
@@ -575,4 +574,5 @@ class AdminInventoryView(QMainWindow):
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No
         )
+
         return reply == QMessageBox.StandardButton.Yes
